@@ -25,4 +25,7 @@ export const theme: Theme = createTheme({
     },
     divider: "#DCE2EA",
   },
+  typography: {
+    fontFamily: "Manrope, sans-serif",
+  },
 });

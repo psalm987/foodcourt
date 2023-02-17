@@ -1,13 +1,7 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import Button from "@mui/material/Button";
+import Login from "./pages/login";
 
 function App() {
-  return (
-    <Button variant="contained" color="primary">
-      Hello
-    </Button>
-  );
+  return <Login />;
 }
 
 export default App;
