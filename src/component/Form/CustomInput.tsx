@@ -48,10 +48,11 @@ const BootstrapInput = styled(OutlinedInput)(({ theme }) => ({
 }));
 
 export default function CustomInput(props: CustomInputProps) {
+  const { label, helperText, ...inputProps } = props;
   return (
-    <FormControl variant="standard" fullWidth={props.fullWidth}>
+    <FormControl variant="standard" fullWidth={inputProps.fullWidth}>
       <FormLabel
-        htmlFor={props.id}
+        htmlFor={inputProps.id}
         sx={{
           color: "text.primary",
           fontSize: "16px",
@@ -59,12 +60,10 @@ export default function CustomInput(props: CustomInputProps) {
           "&.Mui-focused": { color: "text.primary" },
         }}
       >
-        {props.label}
+        {label}
       </FormLabel>
-      <BootstrapInput
-        {...{ ...props, label: undefined, helperText: undefined }}
-      />
-      <FormHelperText error>{props.helperText}</FormHelperText>
+      <BootstrapInput {...inputProps} />
+      <FormHelperText error>{helperText}</FormHelperText>
     </FormControl>
   );
 }
