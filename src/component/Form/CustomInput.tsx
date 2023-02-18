@@ -1,10 +1,17 @@
 import * as React from "react";
-import { alpha, styled } from "@mui/material/styles";
-import InputBase, { InputBaseProps } from "@mui/material/InputBase";
-import InputLabel from "@mui/material/InputLabel";
+import { styled } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 import { COLORS } from "../../theme/constant";
-import { FormLabel, OutlinedInput, OutlinedInputProps } from "@mui/material";
+import {
+  FormHelperText,
+  FormLabel,
+  OutlinedInput,
+  OutlinedInputProps,
+} from "@mui/material";
+
+interface CustomInputProps extends OutlinedInputProps {
+  helperText?: string;
+}
 
 const BootstrapInput = styled(OutlinedInput)(({ theme }) => ({
   "label + &": {},
@@ -40,7 +47,7 @@ const BootstrapInput = styled(OutlinedInput)(({ theme }) => ({
   },
 }));
 
-export default function CustomInput(props: OutlinedInputProps) {
+export default function CustomInput(props: CustomInputProps) {
   return (
     <FormControl variant="standard" fullWidth={props.fullWidth}>
       <FormLabel
@@ -54,7 +61,10 @@ export default function CustomInput(props: OutlinedInputProps) {
       >
         {props.label}
       </FormLabel>
-      <BootstrapInput {...{ ...props, label: undefined }} />
+      <BootstrapInput
+        {...{ ...props, label: undefined, helperText: undefined }}
+      />
+      <FormHelperText error>{props.helperText}</FormHelperText>
     </FormControl>
   );
 }
