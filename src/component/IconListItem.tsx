@@ -2,6 +2,8 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { TickCircle } from "iconsax-react";
 import React from "react";
 import { COLORS } from "../theme/constant";
+import Body from "./Typography/Body";
+import Subtitle from "./Typography/Subtitle";
 
 interface IconListItemProps {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -32,30 +34,23 @@ const IconListItem = (props: IconListItemProps) => {
           width: "100%",
         }}
       >
-        <Typography
-          component="h3"
+        <Subtitle
           sx={{
             fontWeight: 500,
-            fontSize: "16px",
-            lineHeight: "25px",
             letterSpacing: "-0.3px",
             pb: 0.5,
             color: props.active ? "text.primary" : COLORS.text[2],
           }}
         >
           {props.heading}
-        </Typography>
-        <Typography
-          component="h3"
+        </Subtitle>
+        <Body
           sx={{
-            fontWeight: 400,
-            fontSize: "12px",
-            lineHeight: "19px",
             color: props.active ? COLORS.text[3] : COLORS.text[1],
           }}
         >
           {props.body}
-        </Typography>
+        </Body>
       </Box>
       <Box
         sx={{
@@ -68,6 +63,55 @@ const IconListItem = (props: IconListItemProps) => {
         {props.active && (
           <TickCircle color={theme.palette.warning.main} size="20px" />
         )}
+      </Box>
+    </Box>
+  );
+};
+
+export const LoadingIconListItem = (props: { icon: string }) => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 2,
+      }}
+    >
+      <Box
+        sx={{
+          bgcolor: COLORS.loading[1],
+          height: "45px",
+          width: "45px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "6px",
+          fontSize: "24px",
+          userSelect: "none",
+        }}
+      >
+        {props.icon}
+      </Box>
+      <Box>
+        <Box
+          sx={{
+            bgcolor: COLORS.loading[1],
+            height: "14px",
+            width: "194px",
+            borderRadius: 0.5,
+            mb: 1,
+          }}
+        />
+        <Box
+          sx={{
+            bgcolor: COLORS.loading[1],
+            height: "14px",
+            width: "132px",
+            borderRadius: 0.5,
+          }}
+        />
       </Box>
     </Box>
   );
