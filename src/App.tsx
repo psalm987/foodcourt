@@ -3,6 +3,12 @@ import React from "react";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "https://spacex-production.up.railway.app/",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
@@ -19,13 +25,15 @@ function App() {
           },
         }}
       />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
-        </Routes>
-      </BrowserRouter>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<Navigate to="/login" replace />} />
+          </Routes>
+        </BrowserRouter>
+      </ApolloProvider>
     </React.Fragment>
   );
 }

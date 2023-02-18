@@ -1,8 +1,11 @@
-import { Box, useTheme } from "@mui/material";
+import { Box, Skeleton, useTheme } from "@mui/material";
 import { COLORS } from "../theme/constant";
 
-const CustomAvatar = (props: { children: string }) => {
+const CustomAvatar = (props: { children: string; loading?: boolean }) => {
   const theme = useTheme();
+  if (props.loading) {
+    return <Skeleton variant="circular" height={70} width={70} />;
+  }
   return (
     <Box
       sx={{
