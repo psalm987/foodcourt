@@ -10,14 +10,14 @@ const LeftSection = () => {
   return (
     <Box
       sx={{
-        maxWidth: "620px",
+        maxWidth: { xs: "none", md: "400px", lg: "620px" },
         width: "100%",
         backgroundColor: "background.paper",
         my: 5.5,
       }}
     >
-      <Logo sx={{ ml: 8.125 }} />
-      <Box sx={{ ml: 10, mr: 7.25 }}>
+      <Logo sx={{ ml: { xs: 3, lg: 8.125 } }} />
+      <Box sx={{ ml: { xs: 4.5, lg: 10 }, mr: { xs: 3.5, lg: 7.25 } }}>
         <H1>Hi there, see what’s new</H1>
         <Subtitle>
           Here’s how Foodcourt helps you manage your daily operations and ensure
@@ -29,8 +29,8 @@ const LeftSection = () => {
           display: "flex",
           flexDirection: "column",
           mt: 6.75,
-          ml: 8.75,
-          mr: 11,
+          ml: { xs: 3.5, lg: 8.75 },
+          mr: { xs: 3.5, lg: 11 },
           gap: 3.75,
         }}
       >

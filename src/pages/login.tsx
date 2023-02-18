@@ -7,12 +7,18 @@ import { AuthContext } from "../context/auth/authContext";
 
 const Login = () => {
   const { isLoggedIn } = useContext(AuthContext);
-  
+
   if (isLoggedIn) {
     return <Navigate to="/profile" replace />;
   }
   return (
-    <Box sx={{ display: "flex", flexDirection: "row", minHeight: "100vh" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        minHeight: "100vh",
+      }}
+    >
       <LeftSection />
       <RightSection />
     </Box>

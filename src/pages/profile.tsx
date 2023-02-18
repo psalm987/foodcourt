@@ -22,7 +22,7 @@ const Profile = () => {
           pt: 2,
           pb: 5,
           display: "flex",
-          flexDirection: "row",
+          flexDirection: { xs: "column", md: "row" },
           flexGrow: 1,
           gap: 5,
         }}

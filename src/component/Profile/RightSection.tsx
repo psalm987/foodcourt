@@ -13,7 +13,8 @@ const RightSection = () => {
         backgroundColor: COLORS.card[1],
         px: 3,
         py: 10,
-        width: "375px",
+        width: "100%",
+        maxWidth: { xs: "none", md: "375px" },
         borderRadius: "12px",
       }}
     >
@@ -29,6 +30,7 @@ const RightSection = () => {
           borderRadius: "10px",
           display: "flex",
           flexDirection: "column",
+          alignItems: "flex-start",
           gap: 2,
         }}
       >
@@ -37,7 +39,7 @@ const RightSection = () => {
         <LoadingIconListItem icon="💥" />
       </Box>
       <H2 sx={{ textAlign: "center", mb: 1 }}>📫 Notifications</H2>
-      <Subtitle sx={{ textAlign: "center" }}>
+      <Subtitle sx={{ textAlign: "center", maxWidth: "307px", mx: "auto" }}>
         Receive notifcations about your rider performance, efficiency reviews
         and a lot more
       </Subtitle>

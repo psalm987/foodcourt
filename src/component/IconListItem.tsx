@@ -76,6 +76,7 @@ export const LoadingIconListItem = (props: { icon: string }) => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%",
         gap: 2,
       }}
     >
@@ -94,12 +95,13 @@ export const LoadingIconListItem = (props: { icon: string }) => {
       >
         {props.icon}
       </Box>
-      <Box>
+      <Box width="100%">
         <Box
           sx={{
             bgcolor: COLORS.loading[1],
             height: "14px",
-            width: "194px",
+            width: "100%",
+            maxWidth: "194px",
             borderRadius: 0.5,
             mb: 1,
           }}
@@ -108,7 +110,8 @@ export const LoadingIconListItem = (props: { icon: string }) => {
           sx={{
             bgcolor: COLORS.loading[1],
             height: "14px",
-            width: "132px",
+            width: "100%",
+            maxWidth: "132px",
             borderRadius: 0.5,
           }}
         />
