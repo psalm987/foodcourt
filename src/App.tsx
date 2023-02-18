@@ -7,7 +7,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import AuthProvider from "./context/auth/authProvider";
 
 const client = new ApolloClient({
-  uri: "https://spacex-production.up.railway.app/",
+  uri: import.meta.env.VITE_GQL_URL,
   cache: new InMemoryCache(),
 });
 

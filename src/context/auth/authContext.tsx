@@ -3,8 +3,8 @@ import { AuthContextProps, AuthProps } from "../types";
 
 export const authInit: AuthProps = {
   database: {
-    email: "foodcourt@test.com",
-    password: "test",
+    email: import.meta.env.VITE_DATABASE_EMAIL,
+    password: import.meta.env.VITE_DATABASE_PASSWORD,
   },
   isLoggedIn: false,
   error: "",
