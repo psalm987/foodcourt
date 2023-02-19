@@ -18,7 +18,8 @@ Install all dependencies using Yarn:
 
 > `yarn install`
 
-Running the Project
+## Running the Project
+
 To run the development server for the project, run the following command:
 
 > `yarn dev`
